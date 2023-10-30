@@ -18,10 +18,10 @@ public class Graph {
     //Přidání hran do grafu
     public void addEgde(int source, int destination, double weight) {
         Edge edge = new Edge(source, destination, weight);
-        adjacencylist[source-1].addFirst(edge);
+        adjacencylist[source].addFirst(edge);
 
         edge = new Edge(destination, source, weight);
-        adjacencylist[destination-1].addFirst(edge);
+        adjacencylist[destination].addFirst(edge);
     }
 
 
@@ -51,7 +51,7 @@ public class Graph {
             visited[u] = true; // Označ tento vrchol jako navštívený
 
             for (Edge edge : adjacencylist[u]) { // Projdi všechny hrany spojené s tímto vrcholem
-                int v = edge.destination-1; // Získej druhý vrchol spojený touto hranou
+                int v = edge.destination; // Získej druhý vrchol spojený touto hranou
                 if (!visited[v] && distance[u] != Double.MAX_VALUE && distance[u] + edge.weight < distance[v]) {
                     distance[v] = distance[u] + edge.weight; // Pokud je nová vzdálenost menší, aktualizuj ji
                     prev[v] = u; // Uložíme předchozí vrchol na nejkratší cestě

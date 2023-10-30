@@ -28,7 +28,7 @@
 ❄ Pocet druhu kolecek D: ⛏
 2
 ❄ Definice kolecka (nazev, minimalni rychlost, maximalni rychlost, minimalni vzdalenost, maximalni vzdalenost, doba opravy, maximalni zatizeni a procentualni pomer zastoupení druhu kolecka)  ⛏
-Pomalé 1 1 1000 1000 0 1 0.5
+Pomalé 1 1 1000 1000 0 2 0.5
 Staré 10 10 1 1 10 1 0.5
 ❄ Pocet pozadavku P: ⛏
 8
