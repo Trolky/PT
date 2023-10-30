@@ -93,6 +93,7 @@ public class main {
 
     public static void createBorrows(){
         Random r = new Random();
+        int borrowsPerFourPaths = paths.length/4;
         for(int i =0;i<borrowsType.length;i++){
             String name = borrowsType[i].name;
             double speed;
@@ -112,7 +113,9 @@ public class main {
 
             int weight = borrowsType[i].maxWeight;
             int repairTime = borrowsType[i].repairTime;
-            borrows.add(new Borrow(name,speed,distance,weight,repairTime));
+            for(int j = 0;j<borrowsPerFourPaths*borrowsType[i].proxy;j++){
+                borrows.add(new Borrow(name,speed,distance,weight,repairTime));
+            }
         }
     }
 
