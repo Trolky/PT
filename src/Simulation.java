@@ -30,7 +30,7 @@ public class Simulation {
             int currentRequest = 0;//pokaždé bere request na indexu 0
             double distance = graph.dijkstraFromTo((int)Math.round(requests.get(currentRequest).warehouse),requests.get(currentRequest).costumer); //vzdálenost k zákazníkovi
 
-            int from = vertexs.get((int) Math.round(requests.get(currentRequest).warehouse)).ORDER; //Odkud
+            int from = vertexs.get((int) requests.get(currentRequest).warehouse).ORDER; //Odkud
             int to = vertexs.get(requests.get(currentRequest).costumer).ORDER; //Kam
 
             //Podmínka pro vypsání požadavku jenom jednou

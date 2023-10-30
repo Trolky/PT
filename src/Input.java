@@ -9,7 +9,7 @@ public class Input {
 	public void read() {
 		
 		try (BufferedWriter content = new BufferedWriter(new FileWriter("out.txt"));
-				BufferedReader reader = new BufferedReader(new FileReader("data/middleS.txt"))) {
+				BufferedReader reader = new BufferedReader(new FileReader("data/denseS.txt"))) {
 			
 	           String line;
 	           boolean inComment = false;
