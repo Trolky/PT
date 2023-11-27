@@ -5,11 +5,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Input {
-
+	static String input = "sparse2M.txt";
 	public void read() {
 		
 		try (BufferedWriter content = new BufferedWriter(new FileWriter("out.txt"));
-				BufferedReader reader = new BufferedReader(new FileReader("data/denseS.txt"))) {
+				BufferedReader reader = new BufferedReader(new FileReader("data/"+input))) {
 			
 	           String line;
 	           boolean inComment = false;

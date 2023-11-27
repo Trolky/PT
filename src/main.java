@@ -6,13 +6,13 @@ import java.util.Random;
 
 public class main {
 
-  /*  public static Customer[] customers;
-    public static Warehouse[] warehouses;*/
+    //public static Customer[] customers;
+    public static ArrayList<Warehouse> warehouses = new ArrayList<>();
     public static Path[] paths;
     public static ArrayList<Request> requests;
     public static BorrowType[] borrowsType;
     public static ArrayList<ANode> vertexs = new ArrayList<>();
-
+    public static int warehouseCount = 0;
     public static void main(String[] args) {
         Input in = new Input();
         in.read();
@@ -40,14 +40,15 @@ public class main {
         try (BufferedReader reader = new BufferedReader(new FileReader("out.txt"))) {
 
             int nW = Integer.parseInt(reader.readLine());
-            //warehouses = new Warehouse[nW];
             for (int i = 0; i < nW; i++) {
                 double x = Double.parseDouble(reader.readLine());
                 double y = Double.parseDouble(reader.readLine());
                 int bags = Integer.parseInt(reader.readLine());
                 int reload = Integer.parseInt(reader.readLine());
                 int load = Integer.parseInt(reader.readLine());
+                if(bags == 0) continue;
                 vertexs.add(new Warehouse(x, y, bags, reload, load));
+                warehouseCount++;
             }
 
             int nC = Integer.parseInt(reader.readLine());

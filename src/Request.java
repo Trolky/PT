@@ -13,4 +13,19 @@ public class Request {
 		this.time = time;
 	}
 
+	public double getWarehouse() {
+		return warehouse;
+	}
+
+	public int getCostumer() {
+		return costumer;
+	}
+
+	public int getBag() {
+		return bag;
+	}
+
+	public int getTime() {
+		return time;
+	}
 }

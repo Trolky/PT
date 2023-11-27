@@ -3,7 +3,7 @@ public class Warehouse extends ANode {
 	int bags;
 	int reload;
 	int load;
-	
+	int currentBags;
 	
 
 	public Warehouse(double x, double y, int bags, int reload, int load) {
@@ -11,6 +11,7 @@ public class Warehouse extends ANode {
 		this.bags = bags;
 		this.reload = reload;
 		this.load = load;
+		currentBags = bags;
 	}
 	
 	

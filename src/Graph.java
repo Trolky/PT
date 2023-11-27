@@ -1,9 +1,13 @@
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class Graph {
     int vertices;
     LinkedList<Edge>[] adjacencylist;
+    ArrayList<Integer> path = new ArrayList<>();
 
     //Vytvoří graf s n vrcholama
     public Graph(int vertices) {
@@ -43,6 +47,7 @@ public class Graph {
         boolean[] visited = new boolean[vertices]; // Pole pro označení navštívených vrcholů
         int[] prev = new int[vertices]; // Pole pro uchování předchozího vrcholu na nejkratší cestě
 
+        path.clear();
         Arrays.fill(distance, Double.MAX_VALUE); // Nastavení vzdálenosti na nekonečno
         distance[source] = 0; // Vzdálenost od zdrojového vrcholu je vždy 0
 
@@ -59,7 +64,12 @@ public class Graph {
             }
         }
 
-        //printDijkstraResult(distance, source, destination, prev);
+        for (int at = destination; at != 0; at = prev[at]) {
+            path.add(at);
+        }
+        Collections.reverse(path);
+
+        //printDijkstraResult(distance,source,destination, prev);
         return distance[destination];
     }
 
@@ -78,8 +88,12 @@ public class Graph {
         return minIndex;
     }
 
+    public ArrayList<Integer> getPath(){
+        return path;
+    }
+
     private void printDijkstraResult(double[] distance, int source, int destination, int[] prev) {
-        System.out.println("Nejkratší cesta z vrcholu " + (source+1) + " do vrcholu " + (destination+1) + " je: " + distance[destination] + " a vede přes tyto vrcholy: ");
+        System.out.println("Nejkratší cesta z vrcholu " + (source) + " do vrcholu " + (destination) + " je: " + distance[destination] + " a vede přes tyto vrcholy: ");
         LinkedList<Integer> path = new LinkedList<>();
         int currentVertex = destination;
 

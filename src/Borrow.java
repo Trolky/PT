@@ -2,6 +2,7 @@ public class Borrow {
 
         String name;
         double speed;
+        double currentDistance;
         double distance;
         int repairTime;
         int maxWeight;
@@ -17,6 +18,7 @@ public class Borrow {
             this.repairTime = repairTime;
             this.maxWeight = maxWeight;
             currentbags = 0;
+            currentDistance = distance;
         }
 
 }
